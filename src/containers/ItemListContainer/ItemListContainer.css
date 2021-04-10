@@ -1,0 +1,21 @@
+.header{
+    padding: .5rem 0;
+    text-align: center;
+    background-color: yellow;
+}
+
+p{
+    margin: 0;
+    font-family: 'Aguafina Script', cursive;
+    font-size: 1.5rem;
+    color: darkslategrey;
+}
+
+.header-portybox{
+    color: darkslategrey;
+    text-decoration: none;
+}
+.header-portybox:hover{
+    text-decoration: none;
+    color: rgb(201, 105, 105);
+}
