@@ -1,0 +1,16 @@
+.card{
+    width: 18rem;
+}
+
+.visual{
+    border: 1px solid lightgray;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: .375rem;
+    padding-bottom: .375rem;
+}
+
+.btn-success{
+    width: 100%;
+}

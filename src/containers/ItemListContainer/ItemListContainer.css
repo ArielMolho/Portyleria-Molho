@@ -4,7 +4,7 @@
     background-color: yellow;
 }
 
-p{
+.header-text{
     margin: 0;
     font-family: 'Aguafina Script', cursive;
     font-size: 1.5rem;
@@ -18,4 +18,9 @@ p{
 .header-portybox:hover{
     text-decoration: none;
     color: rgb(201, 105, 105);
+}
+
+.item-card{
+    margin-top: 1rem;
+    margin-left: 1rem;
 }
