@@ -1,0 +1,98 @@
+[
+    { 
+        "id": "0", 
+        "Categoria": "Alfajor",
+        "Tipo": "Nuez bañado de chocolate blanco",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    {
+        "id": "1",
+        "Categoria": "Alfajor",
+        "Tipo": "Bañados en chocolate negro",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "2",
+        "Categoria": "Alfajor",
+        "Tipo": "Dulce de leche glaseado",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "3",
+        "Categoria": "Muffins",
+        "Tipo": "Limón y jengibre",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "4",
+        "Categoria": "Muffins",
+        "Tipo": "Banana y Nuez",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "5",
+        "Categoria": "Muffins",
+        "Tipo": "Vainilla y chip de chocolate",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "6",
+        "Categoria": "Muffins",
+        "Tipo": "Vainilla con corazón de dulce de leche",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "7",
+        "Categoria": "Cookies",
+        "Tipo": "Cookies de avena con pasas y chocolate blanco",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "8",
+        "Categoria": "Cookies",
+        "Tipo": "Cookies con chips de chocolate",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "9",
+        "Categoria": "Cookies",
+        "Tipo": "Cookies con chocolate y maní",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "10",
+        "Categoria": "Scon",
+        "Tipo": "Scon de queso",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "11",
+        "Categoria": "Scon",
+        "Tipo": "Scon dulce con pasas",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "12",
+        "Categoria": "Pasta frola",
+        "Tipo": "PastafFrola de membrillo",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "13",
+        "Categoria": "Pasta frola",
+        "Tipo": "Pasta frola de batata",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "14",
+        "Categoria": "Pasta frola",
+        "Tipo": "PastafFrola de membrillo Mini",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    },
+    { 
+        "id": "15",
+        "Categoria": "Pasta frola",
+        "Tipo": "Pasta frola de batata Mini",
+        "Img": "../../assets/images/portyleria-alfajores.png"
+    }
+]
