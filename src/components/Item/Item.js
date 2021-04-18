@@ -2,10 +2,9 @@ import React from 'react'
 import './Item.css';
 
 export default function Item({data, number, increment, decrement}) {
-    console.log(data.Img);
     return (
         <div className="card">
-            <img src={`${data.Img}`} className="card-img-top" alt={data.Categoria}/>
+            <img src={data.Img} className="card-img-top" alt={data.Categoria}/>
             <div className="card-body">
                 <h5 className="card-title">{data.Categoria}</h5>
                 <p className="card-text">{data.Tipo}</p>

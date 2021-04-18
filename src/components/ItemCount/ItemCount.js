@@ -1,3 +1,4 @@
+// este componente no será usado en la versión final
 import React from 'react';
 import './ItemCount.css';
 import alfajor from '../../assets/images/portyleria-alfajores.png';
