@@ -2,113 +2,129 @@
     { 
         "id": "0", 
         "Categoria": "Alfajor",
-        "Tipo": "Nuez bañado de chocolate blanco - 1 unidad",
+        "Tipo": "Nuez bañado de chocolate blanco",
         "Precio": 100,
-        "Img": "https://live.staticflickr.com/2800/4209883727_8789ed5c60_b.jpg"
+        "Descripción": "Alfajor de Nuez bañado de chocolate blanco. Precio por 1 unidad",
+        "Img": "./images/portyleria-alfajores.png"
     },
     {
         "id": "1",
         "Categoria": "Alfajor",
-        "Tipo": "Bañados en chocolate negro - 1 unidad",
+        "Tipo": "Bañados en chocolate negro",
         "Precio": 80,
-        "Img": "https://live.staticflickr.com/2800/4209883727_8789ed5c60_b.jpg"
+        "Descripción": "Alfajor clásico bañado en chocolate negro. Precio por 1 unidad",
+        "Img": "./images/portyleria-alfajores2.jpg"
     },
     { 
         "id": "2",
         "Categoria": "Alfajor",
-        "Tipo": "Dulce de leche glaseado - 1 unidad",
+        "Tipo": "Dulce de leche glaseado",
         "Precio": 70,
-        "Img": "https://live.staticflickr.com/2800/4209883727_8789ed5c60_b.jpg"
+        "Descripción": "Alfajor de dulce de leche glaseado. Precio por 1 unidad",
+        "Img": "./images/portyleria-alfajores.png"
     },
     { 
         "id": "3",
         "Categoria": "Muffins",
-        "Tipo": "Limón y jengibre - 4 unidades",
+        "Tipo": "Limón y jengibre",
         "Precio": 350,
-        "Img": "https://live.staticflickr.com/8062/8235666416_fb8734ac6c_b.jpg"
+        "Descripción": "Muffins de limón y jengibre. Precio por 4 unidades",
+        "Img": "./images/portyleria-muffin2.jpg"
     },
     { 
         "id": "4",
         "Categoria": "Muffins",
-        "Tipo": "Banana y Nuez - 4 unidades",
+        "Tipo": "Banana y Nuez",
         "Precio": 350,
-        "Img": "https://live.staticflickr.com/8062/8235666416_fb8734ac6c_b.jpg"
+        "Descripción": "Muffins de banana y nuez. Precio por 4 unidades",
+        "Img": "./images/portyleria-muffin2.jpg"
     },
     { 
         "id": "5",
         "Categoria": "Muffins",
-        "Tipo": "Vainilla y chip de chocolate - 4 unidades",
+        "Tipo": "Vainilla y chips de chocolate",
         "Precio": 350,
-        "Img": "https://live.staticflickr.com/8062/8235666416_fb8734ac6c_b.jpg"
+        "Descripción": "Muffins de vainilla y chips de chocolate. Precio por 4 unidades",
+        "Img": "./images/portyleria-muffin2.jpg"
     },
     { 
         "id": "6",
         "Categoria": "Muffins",
-        "Tipo": "Vainilla con corazón de dulce de leche - 4 unidades",
+        "Tipo": "Vainilla con corazón de dulce de leche",
         "Precio": 350,
-        "Img": "https://live.staticflickr.com/8062/8235666416_fb8734ac6c_b.jpg"
+        "Descripción": "Muffins de vainilla con corazón de dulce de leche. Precio por 4 unidades",
+        "Img": "./images/portyleria-muffin2.jpg"
     },
     { 
         "id": "7",
         "Categoria": "Cookies",
-        "Tipo": "Cookies de avena con pasas y chocolate blanco - 5 unidades",
+        "Tipo": "Cookies de avena con pasas y chocolate blanco",
         "Precio": 230,
-        "Img": "https://live.staticflickr.com/2563/3676897367_205a6c0d95_b.jpg"
+        "Descripción": "Cookies de avena con pasas y chocolate blanco. Precio por 5 unidades",
+        "Img": "./images/portyleria-cookies2.jpg"
     },
     { 
         "id": "8",
         "Categoria": "Cookies",
-        "Tipo": "Cookies con chips de chocolate - 5 unidades",
+        "Tipo": "Cookies con chips de chocolate",
         "Precio": 180,
-        "Img": "https://live.staticflickr.com/2563/3676897367_205a6c0d95_b.jpg"
+        "Descripción": "Cookies con chips de chocolate. Precio por 5 unidades",
+        "Img": "./images/portyleria-cookies1.jpg"
     },
     { 
         "id": "9",
         "Categoria": "Cookies",
-        "Tipo": "Cookies con chocolate y maní - 5 unidades",
+        "Tipo": "Cookies con chocolate y maní",
         "Precio": 180,
-        "Img": "https://live.staticflickr.com/2563/3676897367_205a6c0d95_b.jpg"
+        "Descripción": "Cookies con chocolate y maní. Precio por 5 unidades",
+        "Img": "./images/portyleria-cookies1.jpg"
     },
     { 
         "id": "10",
         "Categoria": "Scon",
-        "Tipo": "Scon de queso - 1 unidad",
+        "Tipo": "Scon de queso",
         "Precio": 100,
-        "Img": "https://live.staticflickr.com/4023/4712866089_35549ea090_b.jpg"
+        "Descripción": "Scon de queso. Precio por 1 unidad",
+        "Img": "./images/portyleria-scon.jpg"
     },
     { 
         "id": "11",
         "Categoria": "Scon",
-        "Tipo": "Scon dulce con pasas - 1 unidad",
+        "Tipo": "Scon dulce con pasas",
         "Precio": 100,
-        "Img": "https://live.staticflickr.com/4023/4712866089_35549ea090_b.jpg"
+        "Descripción": "Scon dulce con pasas. Precio por 1 unidad",
+        "Img": "./images/portyleria-scon.jpg"
     },
     { 
         "id": "12",
         "Categoria": "Pasta frola",
-        "Tipo": "Pasta frola de membrillo - 22cm aprox",
+        "Tipo": "Pasta frola de membrillo Mediana",
         "Precio": 750,
-        "Img": "https://live.staticflickr.com/8885/17347490594_dcaec0b650_b.jpg"
+        "Descripción": "Pasta frola de membrillo. Tamaño de 22cm aprox",
+        "Img": "./images/portyleria-pastafrola.jpg"
     },
     { 
         "id": "13",
         "Categoria": "Pasta frola",
-        "Tipo": "Pasta frola de batata - 22cm aprox",
+        "Tipo": "Pasta frola de batata Mediana",
         "Precio": 750,
-        "Img": "https://live.staticflickr.com/8885/17347490594_dcaec0b650_b.jpg"
+        "Descripción": "Pasta frola de batata. Tamaño de 22cm aprox",
+        "Img": "./images/portyleria-pastafrola.jpg"
     },
     { 
         "id": "14",
         "Categoria": "Pasta frola",
-        "Tipo": "Pasta frola de membrillo Mini - 11cm aprox",
+        "Tipo": "Pasta frola de membrillo Mini",
         "Precio": 290,
-        "Img": "https://live.staticflickr.com/8885/17347490594_dcaec0b650_b.jpg"
+        "Descripción": "Pasta frola de membrillo. Tamaño de 11cm aprox",
+        "Img": "./images/portyleria-pastafrola.jpg"
     },
     { 
         "id": "15",
         "Categoria": "Pasta frola",
-        "Tipo": "Pasta frola de batata Mini - 11cm aprox",
+        "Tipo": "Pasta frola de batata Mini",
         "Precio": 290,
-        "Img": "https://live.staticflickr.com/8885/17347490594_dcaec0b650_b.jpg"
+        "Descripción": "Pasta frola de batata. Tamaño de 11cm aprox",
+        "Img": "./images/portyleria-pastafrola.jpg"
     }
 ]
