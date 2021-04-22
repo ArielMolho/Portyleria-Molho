@@ -1,7 +1,7 @@
 .header{
     padding: .5rem 0;
     text-align: center;
-    background-color: yellow;
+    background-color: rgb(201, 105, 105);
 }
 
 .header-text{
@@ -9,6 +9,7 @@
     font-family: 'Aguafina Script', cursive;
     font-size: 1.5rem;
     color: darkslategrey;
+    text-shadow: 2px 2px 5px white;
 }
 
 .header-portybox{
@@ -17,7 +18,7 @@
 }
 .header-portybox:hover{
     text-decoration: none;
-    color: rgb(201, 105, 105);
+    color: white;
 }
 
 .item-card{

@@ -1,26 +1,10 @@
 .header{
     padding: .5rem 0;
     text-align: center;
-    background-color: yellow;
-}
-
-.header-text{
+    background-color: rgb(201, 105, 105);
     margin: 0;
     font-family: 'Aguafina Script', cursive;
-    font-size: 1.5rem;
+    font-size: 3rem;
     color: darkslategrey;
-}
-
-.header-portybox{
-    color: darkslategrey;
-    text-decoration: none;
-}
-.header-portybox:hover{
-    text-decoration: none;
-    color: rgb(201, 105, 105);
-}
-
-.item-card{
-    margin-top: 1rem;
-    margin-left: 1rem;
+    text-shadow: 2px 2px 5px white;
 }
