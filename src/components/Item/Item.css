@@ -15,3 +15,8 @@
 .btn-success{
     width: 100%;
 }
+
+a.link-text, a.link-text:hover{
+    color: white;
+    text-decoration: none;
+}

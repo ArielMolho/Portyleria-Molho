@@ -6,6 +6,7 @@ import Products from './containers/ProductPage/ProductPageContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import Contact from './containers/ContactPage/ContactPageContainer';
 import Footer from './components/Footer/Footer';
+import Cart from './containers/CartPage/CartPageContainer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 class App extends React.Component {
@@ -24,10 +25,13 @@ class App extends React.Component {
             <Products/>
           </Route>
           <Route path="/item/:id">
-            <ItemDetailContainer/>
+            <ItemDetailContainer />
           </Route>
           <Route path="/contact">
             <Contact/>
+          </Route>
+          <Route path="/cart">
+            <Cart/>
           </Route>
         </Switch>
         <Footer/>

@@ -2,6 +2,7 @@ import React from 'react'
 import './Item.css';
 import ItemCount from '../ItemCount/ItemCount';
 //import ItemDetail from '../ItemDetail/ItemDetail';
+import {Link} from 'react-router-dom';
 
 export default function Item({data}) {
     return (
@@ -11,8 +12,8 @@ export default function Item({data}) {
                 <div className="card-body">
                     <h5 className="card-title">{data.Tipo}</h5>
                     <p className="card-text">Precio: $ {data.Precio}</p>
-                    <button type="button" className="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-                        Detalles del producto
+                    <button type="button" className="btn btn-success" >
+                        <Link to={`/item/${data.id}`} className="link-text">Detalles del producto</Link>
                     </button>
                 </div>
             </div>

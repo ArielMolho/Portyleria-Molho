@@ -19,7 +19,7 @@ export default function HomePageContainer() {
                 <div className="card-body">
                     <h5 className="card-title text-center home-card-title">Hola! soy Romi Portillo</h5>
                     <p className="card-text home-card-text">Bienvenid@s a Portyleria. Mi emprendimiento personal de pasteleria con amor.</p>
-                    <p className="card-text home-card-text">Te invito a que descubras nuestros productos o me contactes por pedidos especiales.</p>
+                    <p className="card-text home-card-text">Te invito a que descubras mis productos o me contactes por pedidos especiales.</p>
                 </div>
                 <div className="card-body d-flex flex-row justify-content-around align-items-center">
                     <button type="button" className="btn btn-secondary">

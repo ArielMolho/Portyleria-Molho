@@ -7,7 +7,7 @@ import whatsapp from '../../assets/images/whatsapp.png';
 export default function ContactPageContainer() {
     return(
         <div>
-            <h1 className="contact-title">Si querés contactarme usá alguno de los siguientes canales:</h1>
+            <h1 className="contact-title">Si querés contactarme, usá alguno de los siguientes canales:</h1>
             <div className="d-flex flex-column justify-content-around align-items-center contact-icons">
                 <a href="https://www.instagram.com/portyleria/?hl=es" target="_blank" rel='noreferrer' className="contact-links">
                     <img src={instagram} className="d-block w-25 h-25 mx-auto" alt="instagram"/>
