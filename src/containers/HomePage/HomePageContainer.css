@@ -1,0 +1,22 @@
+.home-card{
+    border-radius: 10px;
+    border: 2px solid rgb(201, 105, 105);
+}
+
+.home-card-title{
+    font-family: 'Aguafina Script', cursive;
+    font-size: 2rem;
+}
+
+.home-card-text{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.home-link{
+    color: white;
+    text-decoration:none;
+}
+.home-link:hover{
+    color: white;
+    text-decoration:none;
+}

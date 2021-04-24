@@ -3,7 +3,7 @@ import './ItemDetailContainer.css';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
 //import datajson from '../../assets/data/data.json';
 
-export default function ItemListContainer() {
+export default function ItemDetailContainer() {
     const [items, setItem] = useState([]);
 
     useEffect(() => {

@@ -1,19 +1,54 @@
 import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
+import Home from './containers/HomePage/HomePageContainer';
+import Products from './containers/ProductPage/ProductPageContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
+import Contact from './containers/ContactPage/ContactPageContainer';
+import Footer from './components/Footer/Footer';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 class App extends React.Component {
   render(){
     return (
-      <div className="nav-div">
+      <Router>
         <NavBar />
-        <ItemListContainer greeting="Bienvenid@!" name="PortyBox"/>
-        <ItemDetailContainer />
-      </div>
+        <Switch>
+          <Route exact path="/">
+            <Home/>
+          </Route>
+          <Route path="/products">
+            <Products/>
+          </Route>
+          <Route path="/products/:id">
+            <Products/>
+          </Route>
+          <Route path="/item/:id">
+            <ItemDetailContainer/>
+          </Route>
+          <Route path="/contact">
+            <Contact/>
+          </Route>
+        </Switch>
+        <Footer/>
+      </Router>
     )
   }
 }
 
 export default App;
+
+/*
+
+          <Route path="/portybox">
+            <PortyBox/>
+          </Route>
+          
+      <Route exact path="/posts">
+        <PostsContainer />
+      </Route>
+
+      <Route path="/posts/:postId">
+        <PostsDetailPageContainer />
+      </Route>
+*/

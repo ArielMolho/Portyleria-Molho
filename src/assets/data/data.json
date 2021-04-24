@@ -2,15 +2,15 @@
     { 
         "id": "0", 
         "Categoria": "Alfajor",
-        "Tipo": "Nuez bañado de chocolate blanco",
+        "Tipo": "Alfajor de nuez bañado de chocolate blanco",
         "Precio": 100,
         "Descripción": "Alfajor de Nuez bañado de chocolate blanco. Precio por 1 unidad",
-        "Img": "./images/portyleria-alfajores.png"
+        "Img": "./images/portyleria-alfajores2.jpg"
     },
     {
         "id": "1",
         "Categoria": "Alfajor",
-        "Tipo": "Bañados en chocolate negro",
+        "Tipo": "Alfajor de bañado en chocolate negro",
         "Precio": 80,
         "Descripción": "Alfajor clásico bañado en chocolate negro. Precio por 1 unidad",
         "Img": "./images/portyleria-alfajores2.jpg"
@@ -18,42 +18,42 @@
     { 
         "id": "2",
         "Categoria": "Alfajor",
-        "Tipo": "Dulce de leche glaseado",
+        "Tipo": "Alfajor de dulce de leche glaseado",
         "Precio": 70,
         "Descripción": "Alfajor de dulce de leche glaseado. Precio por 1 unidad",
-        "Img": "./images/portyleria-alfajores.png"
+        "Img": "./images/portyleria-alfajores2.jpg"
     },
     { 
         "id": "3",
         "Categoria": "Muffins",
-        "Tipo": "Limón y jengibre",
+        "Tipo": "Muffins de limón y jengibre",
         "Precio": 350,
         "Descripción": "Muffins de limón y jengibre. Precio por 4 unidades",
-        "Img": "./images/portyleria-muffin2.jpg"
+        "Img": "./images/portyleria-muffin.jpg"
     },
     { 
         "id": "4",
         "Categoria": "Muffins",
-        "Tipo": "Banana y Nuez",
+        "Tipo": "Muffins de banana y nuez",
         "Precio": 350,
         "Descripción": "Muffins de banana y nuez. Precio por 4 unidades",
-        "Img": "./images/portyleria-muffin2.jpg"
+        "Img": "./images/portyleria-muffin.jpg"
     },
     { 
         "id": "5",
         "Categoria": "Muffins",
-        "Tipo": "Vainilla y chips de chocolate",
+        "Tipo": "Muffins de vainilla y chips de chocolate",
         "Precio": 350,
         "Descripción": "Muffins de vainilla y chips de chocolate. Precio por 4 unidades",
-        "Img": "./images/portyleria-muffin2.jpg"
+        "Img": "./images/portyleria-muffin.jpg"
     },
     { 
         "id": "6",
         "Categoria": "Muffins",
-        "Tipo": "Vainilla con corazón de dulce de leche",
+        "Tipo": "Muffins de vainilla con corazón de dulce de leche",
         "Precio": 350,
         "Descripción": "Muffins de vainilla con corazón de dulce de leche. Precio por 4 unidades",
-        "Img": "./images/portyleria-muffin2.jpg"
+        "Img": "./images/portyleria-muffin.jpg"
     },
     { 
         "id": "7",
@@ -126,5 +126,21 @@
         "Precio": 290,
         "Descripción": "Pasta frola de batata. Tamaño de 11cm aprox",
         "Img": "./images/portyleria-pastafrola.jpg"
+    },
+    { 
+        "id": "16",
+        "Categoria": "Porty Box",
+        "Tipo": "Mini Porty Box",
+        "Precio": 690,
+        "Descripción": "Caja con 1 Alfajor, 1 Lingote de brownie, 2 Cookies chip the cocolate, 1 Muffin de banana y nuez",
+        "Img": "./images/portyleria-portybox1.jpg"
+    },
+    { 
+        "id": "17",
+        "Categoria": "Porty Box",
+        "Tipo": "Porty Box Medium",
+        "Precio": 890,
+        "Descripción": "Caja con 2 Alfajores, 1 Lingote de brownie, 3 Cookies chip the cocolate, 1 Muffin de banana y nuez, 1 Muffin de vainilla con corazón de dulce de leche",
+        "Img": "./images/portyleria-portybox1.jpg"
     }
 ]

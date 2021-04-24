@@ -1,0 +1,24 @@
+.footer{
+    background-color: black;
+    width: 100%;
+}
+
+a.footer-link{
+    color: white;
+}
+
+a.footer-link:hover{
+    color: lightgray;
+}
+
+.footer-copyright {
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+}
+
+.copyright {
+    margin-bottom: 0;
+}
