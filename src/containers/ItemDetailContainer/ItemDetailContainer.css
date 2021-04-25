@@ -8,3 +8,9 @@
     color: darkslategrey;
     text-shadow: 2px 2px 5px white;
 }
+
+.return-button{
+    margin: 1rem;
+    background-color: rgb(201, 105, 105);
+    border: rgb(201, 105, 105);
+}

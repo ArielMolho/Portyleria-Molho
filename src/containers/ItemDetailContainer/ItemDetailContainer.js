@@ -2,23 +2,24 @@ import React, {useState, useEffect} from 'react';
 import './ItemDetailContainer.css';
 import ItemCount from '../../components/ItemCount/ItemCount';
 import datajson from '../../assets/data/data.json';
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 
 export default function ItemDetailContainer() {
     let {itemId} = useParams();
-    console.log({itemId})
+    
     const [data, setData] = useState({ Categoria: "",Tipo: "", Precio: "",Descripción: "", Img: ""});
 
     function getItemById(idItem) {
         return new Promise((resolve, reject) => {
-            resolve(datajson.$(idItem))
+            resolve(datajson) //.$(idItem)
         })
     }
 
     useEffect(() => {
+        console.log(itemId)
         getItemById(itemId)
             .then(res => setData(res))
-    },[itemId])
+    },[itemId]);
     
     return(
         <div>
@@ -42,6 +43,9 @@ export default function ItemDetailContainer() {
                         </div>
                     </div>
             </div>
+            <button type="button" className="return-button btn btn-warning">
+                <Link to={`/products`} className="link-text">Volver a Productos</Link>
+            </button>
         </div>
     )
 }
