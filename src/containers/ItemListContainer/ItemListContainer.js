@@ -1,15 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './ItemListContainer.css';
 import ItemList from '../../components/ItemList/ItemList';
-import datajson from '../../assets/data/data.json';
+//import datajson from '../../assets/data/data.json';
+const { getPosts } = require('../../services/postService');
 
 export default function ItemListContainer({name, greeting}) {
     const [data, setData] = useState([]);
 
-    new Promise((resolve, reject) => {
-        resolve(datajson); 
-    })
-    .then(res=> setData(res))
+    useEffect(() => {
+        getPosts()
+            .then(res => setData(res))
+    },[])
+    // new Promise((resolve, reject) => {
+    //     resolve(datajson); 
+    // })
+    // .then(res=> setData(res))
 
     return(
         <div>
