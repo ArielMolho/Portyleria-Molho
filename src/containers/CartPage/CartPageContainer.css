@@ -1,5 +1,5 @@
-.header{
-    padding: .5rem 0;
+.header-cart{
+    padding: 1rem 0 .5rem 0;
     text-align: center;
     background-color: rgb(201, 105, 105);
     margin: 0;
@@ -9,14 +9,8 @@
     text-shadow: 2px 2px 5px white;
 }
 
-.cart-link{
-    text-decoration: none;
-    color: navy;
-    font-size: 1.5rem;
-}
-
-.cart-link:hover{
-    text-decoration: none;
-    color: rgb(201, 105, 105);
-    font-size: 1.5rem;
+.return-button{
+    margin: 1rem;
+    background-color: rgb(201, 105, 105);
+    border: rgb(201, 105, 105);
 }

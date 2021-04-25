@@ -32,9 +32,3 @@ export default function NavBar () {
         </nav>
     )
 }
-
-/*
-                        <li className="nav-item">
-                            <NavLink to={`/portybox`} className="nav-link">PortyBox</NavLink>
-                        </li>
-*/

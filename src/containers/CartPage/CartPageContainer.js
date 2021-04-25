@@ -6,9 +6,11 @@ export default function CartPageContainer() {
 
     return(
         <div>
-            <h2 className="header">Cart</h2>
+            <h2 className="header-cart">Carito de Compras</h2>
 
-            <Link to={`/products`} className="cart-link">Continuar comprando</Link>
+            <button type="button" className="return-button btn btn-warning">
+                <Link to={`/products`} className="link-text">Continuar comprando</Link>
+            </button>
         </div>
     )
 }

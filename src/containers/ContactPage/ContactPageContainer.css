@@ -10,25 +10,9 @@
 .contact-icons{
     margin-top: 2rem;
     margin-bottom: 2rem;
-    /*display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;*/
 }
 
 .contact-links{
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-
-/*
-d-flex flex-column justify-content-around align-items-center
-.home-link{
-    color: white;
-    text-decoration:none;
-}
-.home-link:hover{
-    color: white;
-    text-decoration:none;
-}
-*/

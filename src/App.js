@@ -21,10 +21,10 @@ class App extends React.Component {
           <Route exact path="/products">
             <Products/>
           </Route>
-          <Route path="/products/:categoryid">
+          <Route path="/products/:categoryId">
             <Products/>
           </Route>
-          <Route path="/item/:id">
+          <Route path="/item/:itemId">
             <ItemDetailContainer />
           </Route>
           <Route path="/contact">
