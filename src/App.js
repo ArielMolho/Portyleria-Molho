@@ -18,10 +18,10 @@ class App extends React.Component {
           <Route exact path="/">
             <Home/>
           </Route>
-          <Route path="/products">
+          <Route exact path="/products">
             <Products/>
           </Route>
-          <Route path="/products/:id">
+          <Route path="/products/:categoryid">
             <Products/>
           </Route>
           <Route path="/item/:id">
