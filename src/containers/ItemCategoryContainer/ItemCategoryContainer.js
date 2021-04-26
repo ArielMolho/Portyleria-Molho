@@ -10,14 +10,23 @@ export default function ItemCategoryContainer() {
     
     const [data, setData] = useState([]);
 
+    // useEffect(() => {
+    //     getPosts()
+    //         .then(res => setData(res))
+    // },[])
+
+    // const dataCategory = data.filter(function(item){
+    //     return item.Categoria === categoryId;
+    // })
     useEffect(() => {
         getPosts()
-            .then(res => setData(res))
-    },[])
+            .then(res => setData(
+                res.filter(function(item){
+                    return item.Categoria === categoryId;
+                })
+                ))
+    },[categoryId])
 
-    const dataCategory = data.filter(function(item){
-        return item.Categoria === categoryId;
-    })
     
     return (
         <div>
@@ -29,8 +38,12 @@ export default function ItemCategoryContainer() {
                 <CategoryButtons />
             </div>
             <div>
-                <ItemList dataInput={dataCategory}/>
+                <ItemList dataInput={data}/>
             </div>
         </div>
     )
 }
+
+/*
+                <ItemList dataInput={dataCategory}/>
+*/
