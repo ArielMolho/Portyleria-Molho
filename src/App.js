@@ -43,18 +43,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-/*
-
-          <Route path="/portybox">
-            <PortyBox/>
-          </Route>
-          
-      <Route exact path="/posts">
-        <PostsContainer />
-      </Route>
-
-      <Route path="/posts/:postId">
-        <PostsDetailPageContainer />
-      </Route>
-*/

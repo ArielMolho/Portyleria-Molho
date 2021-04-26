@@ -30,13 +30,3 @@ export default function Footer () {
         </footer>
     )
 }
-
-/*
-                <div class="footer-redes">
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-5 mx-auto">
-                        <div class="redes">
-                            
-                        </div>
-                    </div>
-                </div>
-*/

@@ -20,7 +20,7 @@ export default function ItemListContainer({name, greeting}) {
                 <p className="header-text">Tentate con nuestros <span className="header-portybox">{name}</span>! Ideales para compartir al aire libre.</p>
             </div>
             <div>
-                <CategoryButtons dataInput={data}/>
+                <CategoryButtons />
             </div>
             <div>
                 <ItemList dataInput={data}/>
@@ -28,18 +28,3 @@ export default function ItemListContainer({name, greeting}) {
         </div>
     )
 }
-
-/*
-import datajson from '../../assets/data/data.json';
-    // new Promise((resolve, reject) => {
-    //     resolve(datajson); 
-    // })
-    // .then(res=> setData(res))
-    new Promise((resolve, reject) => { 
-        setTimeout(() => {
-            resolve(datajson);
-            console.log('2 seconds delay for test')
-        }, 2000);
-    })
-    .then(res=> setData(res))
-*/

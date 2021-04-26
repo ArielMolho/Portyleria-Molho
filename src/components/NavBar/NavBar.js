@@ -32,23 +32,3 @@ export default function NavBar () {
         </nav>
     )
 }
-
-/*
-                        <li className="nav-item">
-                            <NavLink to={`/products`} className="nav-link">Productos</NavLink>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <NavLink to={`/products`} className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Productos
-                            </NavLink>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <NavLink to={`//products/:categoryId`} className="dropdown-item">Alfajores</NavLink>
-                                <NavLink to={`//products/:categoryId`} className="dropdown-item">Muffins</NavLink>
-                                <NavLink to={`//products/:categoryId`} className="dropdown-item">Cookies</NavLink>
-                                <NavLink to={`//products/:categoryId`} className="dropdown-item">Scons</NavLink>
-                                <NavLink to={`//products/:categoryId`} className="dropdown-item">Pasta Frolas</NavLink>
-                                <NavLink to={`//products/:categoryId`} className="dropdown-item">Porty Box</NavLink>
-                            </div>
-                        </li>
-
-*/
