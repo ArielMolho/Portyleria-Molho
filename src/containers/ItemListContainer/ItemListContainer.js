@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './ItemListContainer.css';
 import ItemList from '../../components/ItemList/ItemList';
-import ItemCategoryContainer from '../ItemCategoryContainer/ItemCategoryContainer';
+import CategoryButtons from '../../components/CategoryButtons/CategoryButtons';
 
 const { getPosts } = require('../../services/postService');
 
@@ -20,7 +20,7 @@ export default function ItemListContainer({name, greeting}) {
                 <p className="header-text">Tentate con nuestros <span className="header-portybox">{name}</span>! Ideales para compartir al aire libre.</p>
             </div>
             <div>
-                <ItemCategoryContainer />
+                <CategoryButtons dataInput={data}/>
             </div>
             <div>
                 <ItemList dataInput={data}/>

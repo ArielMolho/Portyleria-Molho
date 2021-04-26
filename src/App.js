@@ -3,11 +3,13 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Home from './containers/HomePage/HomePageContainer';
 import Products from './containers/ProductPage/ProductPageContainer';
+import ItemCategoryContainer from './containers/ItemCategoryContainer/ItemCategoryContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import Contact from './containers/ContactPage/ContactPageContainer';
 import Footer from './components/Footer/Footer';
 import Cart from './containers/CartPage/CartPageContainer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 
 class App extends React.Component {
   render(){
@@ -22,7 +24,7 @@ class App extends React.Component {
             <Products/>
           </Route>
           <Route path="/products/:categoryId">
-            <Products/>
+            <ItemCategoryContainer />
           </Route>
           <Route path="/item/:itemId">
             <ItemDetailContainer />
