@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 import ItemList from '../../components/ItemList/ItemList';
 import CategoryButtons from '../../components/CategoryButtons/CategoryButtons';
 
@@ -32,7 +32,7 @@ export default function ItemCategoryContainer() {
         <div>
             <div className="header-greeting">
                 <p className="header-text">Bienvenid@!</p>
-                <p className="header-text">Tentate con nuestros Porty Box! Ideales para compartir al aire libre.</p>
+                <p className="header-text">Tentate con nuestros <Link to={`/products/porty-box`} className="header-portybox">Porty Box</Link>! Ideales para compartir al aire libre.</p>
             </div>
             <div>
                 <CategoryButtons />
