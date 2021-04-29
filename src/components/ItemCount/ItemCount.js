@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './ItemCount.css';
 
-export default function ItemCount ({producto}) {
+export default function ItemCount ({producto, finalizar}) {
     const [number, setNumber] = useState(0);
 
     function onIncrement(){
@@ -14,6 +14,8 @@ export default function ItemCount ({producto}) {
 
     function addtoCart() {
         console.log (`Se agregaron ${number} unidad/es de ${producto} al carrito`)
+        finalizar();
+        //agregar que tome la cantidad de productos agregados
     }
 
     return(
