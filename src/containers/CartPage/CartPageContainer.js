@@ -1,9 +1,17 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './CartPageContainer.css';
-import {Link} from 'react-router-dom';
+import {Link, useLocation } from 'react-router-dom';
 
 export default function CartPageContainer() {
+    const location = useLocation();
 
+    useEffect(() => {
+        let variable = Object.values(location.state.cart)
+        console.log(variable);
+    }, [location]);
+
+    let post = location.state.cart;
+    console.log(post);
     return(
         <div>
             <h2 className="header-cart">Carito de Compras</h2>
@@ -15,8 +23,3 @@ export default function CartPageContainer() {
     )
 }
 
-/*
-    const location = useLocation()
-    const cart = location.state?.cart
-    //console.log(props)
-*/

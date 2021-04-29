@@ -1,30 +1,31 @@
 import React, { useState } from "react";
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export default function ItemDetail({img, categoria, tipo, descripción, precio}) {
+  const sendCarrito= {
+    categoria: categoria,
+    tipo: tipo,
+    descripción: descripción,
+    precio: precio,
+  }
+
   const [show, setShow] = useState(true);
-  
   let cantidadCompra;
 
   function buttonFinalizar (cantidad){
-    setShow(!show);
-
+    setShow({
+      hidden: true
+    });
     cantidadCompra = cantidad;
     console.log(cantidadCompra);
-  }
-
-  function addCart(){
-    const sendCarrito= {
-      categoria: categoria,
-      tipo: tipo,
-      descripción: descripción,
-      precio: precio,
-      cantidad: cantidadCompra
-    }
+    sendCarrito.cantidad = cantidadCompra;
     console.log(sendCarrito);
   }
+
+  let history = useHistory();
 
   return (
     <div className="card mb-3 w-100 card-details">
@@ -40,6 +41,17 @@ export default function ItemDetail({img, categoria, tipo, descripción, precio})
               </div>
               <div>
                   <ItemCount producto={tipo} finalizar={buttonFinalizar}/>
+                  <button hidden={!show.hidden} id="button-finalizar" type="button" className="btn btn-warning"
+                  onClick={() => history.push({pathname: `/cart`, state: {cart: {sendCarrito} }})}>
+                  Finalizar Compra</button>
+              </div>
+          </div>
+      </div>
+    </div>
+  )
+}
+
+/*
                   {!show &&
                     <button id="button-finalizar" type="button" className="btn btn-warning">
                       <Link to={{
@@ -50,18 +62,13 @@ export default function ItemDetail({img, categoria, tipo, descripción, precio})
                       className="link-text">Finalizar Compra</Link>
                     </button>
                   }
-              </div>
-          </div>
-      </div>
-    </div>
-  )
-}
-
-// falta como pasar props a un link
-/*
-                  {!show &&
-                    <button id="button-finalizar" type="button" className="btn btn-warning">
-                      <Link to={`/cart`} className="link-text" cart={addCart}>Finalizar Compra</Link>
-                    </button>
+                  {!show ?
+                    <button id="button-finalizar" type="button" className="btn btn-warning"
+                    onClick={() => history.push({pathname: `/cart`, state: {cart: {sendCarrito} }})}>
+                    Finalizar Compra</button>
+                    : <button id="button-finalizar" type="button" className="btn btn-warning"
+                    onClick={() => history.push({pathname: `/cart`, state: {cart: {sendCarrito} }})}>
+                    Finalizar Compra</button>
                   }
+
 */
