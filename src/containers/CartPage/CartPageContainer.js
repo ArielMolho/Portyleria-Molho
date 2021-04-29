@@ -14,3 +14,9 @@ export default function CartPageContainer() {
         </div>
     )
 }
+
+/*
+    const location = useLocation()
+    const cart = location.state?.cart
+    //console.log(props)
+*/

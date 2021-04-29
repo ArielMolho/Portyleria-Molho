@@ -7,7 +7,7 @@ import ItemCategoryContainer from './containers/ItemCategoryContainer/ItemCatego
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import Contact from './containers/ContactPage/ContactPageContainer';
 import Footer from './components/Footer/Footer';
-import Cart from './containers/CartPage/CartPageContainer';
+import CartPageContainer from './containers/CartPage/CartPageContainer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
@@ -33,7 +33,7 @@ class App extends React.Component {
             <Contact/>
           </Route>
           <Route path="/cart">
-            <Cart/>
+            <CartPageContainer/>
           </Route>
         </Switch>
         <Footer/>

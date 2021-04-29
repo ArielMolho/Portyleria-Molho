@@ -6,19 +6,25 @@ import {Link} from 'react-router-dom';
 export default function ItemDetail({img, categoria, tipo, descripción, precio}) {
   const [show, setShow] = useState(true);
   
-  function buttonFinalizar (){
+  let cantidadCompra;
+
+  function buttonFinalizar (cantidad){
     setShow(!show);
-    //agregar que tome la cantidad de productos agregados
+
+    cantidadCompra = cantidad;
+    console.log(cantidadCompra);
   }
 
-  const sendCarrito= {
-    img: img,
-    categoria: categoria,
-    tipo: tipo,
-    descripción: descripción,
-    precio: precio
+  function addCart(){
+    const sendCarrito= {
+      categoria: categoria,
+      tipo: tipo,
+      descripción: descripción,
+      precio: precio,
+      cantidad: cantidadCompra
+    }
+    console.log(sendCarrito);
   }
-  console.log(sendCarrito);
 
   return (
     <div className="card mb-3 w-100 card-details">
@@ -36,7 +42,12 @@ export default function ItemDetail({img, categoria, tipo, descripción, precio})
                   <ItemCount producto={tipo} finalizar={buttonFinalizar}/>
                   {!show &&
                     <button id="button-finalizar" type="button" className="btn btn-warning">
-                      <Link to={`/cart`} className="link-text">Finalizar Compra</Link>
+                      <Link to={{
+                        pathname: `/cart`,
+                        //cart: {addCart}
+                        state: { cart: {addCart} }
+                      }} 
+                      className="link-text">Finalizar Compra</Link>
                     </button>
                   }
               </div>
@@ -46,19 +57,11 @@ export default function ItemDetail({img, categoria, tipo, descripción, precio})
   )
 }
 
+// falta como pasar props a un link
 /*
-onClick={() => {setShow(!show);}
-
-$(document).ready(function () {
-  $("#button-finalizar").hide();
-});
-
-function hideButtonFinalizar() {
-  var x = document.getElementById("#button-finalizar");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-};
+                  {!show &&
+                    <button id="button-finalizar" type="button" className="btn btn-warning">
+                      <Link to={`/cart`} className="link-text" cart={addCart}>Finalizar Compra</Link>
+                    </button>
+                  }
 */

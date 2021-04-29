@@ -10,14 +10,6 @@ export default function ItemCategoryContainer() {
     
     const [data, setData] = useState([]);
 
-    // useEffect(() => {
-    //     getPosts()
-    //         .then(res => setData(res))
-    // },[])
-
-    // const dataCategory = data.filter(function(item){
-    //     return item.Categoria === categoryId;
-    // })
     useEffect(() => {
         getPosts()
             .then(res => setData(
@@ -43,7 +35,3 @@ export default function ItemCategoryContainer() {
         </div>
     )
 }
-
-/*
-                <ItemList dataInput={dataCategory}/>
-*/

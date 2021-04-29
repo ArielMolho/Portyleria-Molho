@@ -14,8 +14,7 @@ export default function ItemCount ({producto, finalizar}) {
 
     function addtoCart() {
         console.log (`Se agregaron ${number} unidad/es de ${producto} al carrito`)
-        finalizar();
-        //agregar que tome la cantidad de productos agregados
+        finalizar(number);
     }
 
     return(
