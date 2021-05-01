@@ -4,7 +4,7 @@ import {Link, useLocation } from 'react-router-dom';
 
 export default function CartPageContainer() {
     const location = useLocation();
-
+    
     useEffect(() => {
         let variable = Object.values(location.state.cart)
         console.log(variable);
@@ -23,3 +23,4 @@ export default function CartPageContainer() {
     )
 }
 
+// ver como hacer que si entramos a carrito y está vacío no se rompa

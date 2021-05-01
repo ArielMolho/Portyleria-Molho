@@ -19,7 +19,7 @@ export default function ItemDetailContainer() {
         <div>
             <h2 className="header-detalle">Detalle de Producto</h2>
             <div className="d-flex flex-md-row justify-content-around flex-wrap">
-                <ItemDetail categoria={data.Categoria} tipo={data.Tipo} precio={data.Precio} descripción={data.Descripción} img={data.Img} />
+                <ItemDetail data={data}/>
             </div>
             <button type="button" className="return-button btn btn-warning">
                 <Link to={`/products`} className="link-text">Volver a Productos</Link>

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './ItemCount.css';
 
 export default function ItemCount ({producto, finalizar}) {
-    const [number, setNumber] = useState(0);
+    const [number, setNumber] = useState(1);
 
     function onIncrement(){
         setNumber(number + 1)
@@ -30,7 +30,9 @@ export default function ItemCount ({producto, finalizar}) {
                 
             </div>
             <div className="card-body text-center">
-                <button onClick={addtoCart} className="btn btn-success">Agregar al carrito</button>
+                {
+                    number > 0 ? <button onClick={addtoCart} className="btn btn-success">Agregar al carrito</button> : <button onClick={addtoCart} className="btn btn-success" disabled>Agregar al carrito</button>
+                }
             </div>
         </div>
     )
