@@ -3,10 +3,10 @@ import {createContext, useState } from 'react';
 export const CartContext = createContext([]);
 
 export default function AppContextProvider({defaultValue= [], children}){
-    const [item, setItem] = useState(defaultValue);
+    const [cart, setCart] = useState(defaultValue);
 
     function getFromCart (id){
-        return item.find(obj => obj.id === id)
+        return cart.find(obj => obj.id === id)
     }
 
     function isInCart(id){
@@ -18,16 +18,16 @@ export default function AppContextProvider({defaultValue= [], children}){
             console.log("Cannot add an exisiting obj to cart")
             return;
         }
-        setItem([...item, obj]);
+        setCart([...cart, obj]);
     }
 
     return (
         <CartContext.Provider value={
             {
-                item, 
+                cart, 
                 addToCart,
                 isInCart,
-                itemSize: item.length
+                cartSize: cart.length
             }
         }>
             {children}

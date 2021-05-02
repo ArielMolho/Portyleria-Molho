@@ -6,15 +6,14 @@ import { useHistory } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext';
 
 export default function ItemDetail({data}) {
-  const { item } = useContext(CartContext);
-  console.log(item) //para test
+  const { cart } = useContext(CartContext);
 
-  const sendCarrito= {
-    categoria: data.Categoria,
-    tipo: data.Tipo,
-    descripción: data.Descripción,
-    precio: data.Precio,
-  }
+  // const sendCarrito= {
+  //   categoria: data.Categoria,
+  //   tipo: data.Tipo,
+  //   descripción: data.Descripción,
+  //   precio: data.Precio,
+  // }
 
   const [show, setShow] = useState(true);
   let cantidadCompra;
@@ -25,8 +24,15 @@ export default function ItemDetail({data}) {
     });
     cantidadCompra = cantidad;
     console.log(cantidadCompra); //para control
-    sendCarrito.cantidad = cantidadCompra;
-    console.log(sendCarrito); //para control
+    // sendCarrito.cantidad = cantidadCompra;
+    // console.log(sendCarrito); //para control
+    cart.id = data.id;
+    //cart.categoria = data.Categoria;
+    cart.tipo = data.Tipo;
+    //cart.descripción = data.Descripción;
+    cart.precio = data.Precio;
+    cart.cantidad = cantidadCompra;
+    console.log(cart) //para test
   }
   
   let history = useHistory();
@@ -46,8 +52,8 @@ export default function ItemDetail({data}) {
               <div>
                   <ItemCount producto={data.Tipo} finalizar={buttonFinalizar}/>
                   <button hidden={!show.hidden} id="button-finalizar" type="button" className="btn btn-warning"
-                  onClick={() => history.push({pathname: `/cart`, state: {cart: {sendCarrito} }})}>
-                  Finalizar Compra</button>
+                  onClick={() => history.push(`/cart`)}>
+                  Ver Carrito</button>
               </div>
           </div>
       </div>
@@ -56,6 +62,9 @@ export default function ItemDetail({data}) {
 }
 
 /*
+                  <button hidden={!show.hidden} id="button-finalizar" type="button" className="btn btn-warning"
+                  onClick={() => history.push({pathname: `/cart`, state: {cart: {sendCarrito} }})}>
+                  Finalizar Compra</button>
                   {!show &&
                     <button id="button-finalizar" type="button" className="btn btn-warning">
                       <Link to={{

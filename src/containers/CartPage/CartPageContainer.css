@@ -9,6 +9,14 @@
     text-shadow: 2px 2px 5px white;
 }
 
+.empty-cart{
+    text-align: center;
+}
+
+.action-button{
+    width: 34px;
+}
+
 .return-button{
     margin: 1rem;
     background-color: rgb(201, 105, 105);

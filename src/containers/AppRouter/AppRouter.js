@@ -19,24 +19,24 @@ export default function AppRouter() {
         <Router>
             <NavBar />
             <Switch>
-            <Route exact path="/">
-                <Home/>
-            </Route>
-            <Route exact path="/products">
-                <Products/>
-            </Route>
-            <Route path="/products/:categoryId">
-                <ItemCategoryContainer />
-            </Route>
-            <Route path="/item/:itemId">
-                <ItemDetailContainer />
-            </Route>
-            <Route path="/contact">
-                <Contact/>
-            </Route>
-            <Route path="/cart">
-                <CartPageContainer/>
-            </Route>
+                <Route exact path="/">
+                    <Home/>
+                </Route>
+                <Route exact path="/products">
+                    <Products/>
+                </Route>
+                <Route path="/products/:categoryId">
+                    <ItemCategoryContainer />
+                </Route>
+                <Route path="/item/:itemId">
+                    <ItemDetailContainer />
+                </Route>
+                <Route path="/cart">
+                    <CartPageContainer/>
+                </Route>
+                <Route path="/contact">
+                    <Contact/>
+                </Route>
             </Switch>
             <Footer/>
         </Router>

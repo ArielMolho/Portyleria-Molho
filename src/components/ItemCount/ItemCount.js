@@ -27,7 +27,6 @@ export default function ItemCount ({producto, finalizar}) {
                 {
                     number < 5 ? <button onClick={onIncrement} className="btn btn-primary">+</button> : <button onClick={onIncrement} className="btn btn-primary" disabled>+</button>
                 }
-                
             </div>
             <div className="card-body text-center">
                 {
