@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import trash from '../../assets/images/delete.png';
 
-export default function Item({ item, onRemove }) {
-    const [number, setNumber] = useState(item.cantidad);
-    console.log(item) //para test
+export default function Cart({ itemSale, onRemove }) {
+    const [number, setNumber] = useState(itemSale.cantidad);
+    console.log(itemSale.value) //para test
     function onIncrement() {
         setNumber(number + 1);
-        item.Cantidad = number;
-        console.log(item.cantidad);
+        itemSale.Cantidad = number;
+        console.log(itemSale.cantidad);
     }
 
     function onDecrement() {
         setNumber(number - 1);
-        item.Cantidad = number;
-        console.log(item.cantidad);
+        itemSale.Cantidad = number;
+        console.log(itemSale.cantidad);
     }
     return (
         <tr>
-            <th scope="row">{item.id}</th>
-            <td>{item.tipo}</td>
+            <th scope="row">{itemSale.id}</th>
+            <td>{itemSale.tipo}</td>
             <td>{number}</td>
             <td>
                 {
@@ -27,11 +27,11 @@ export default function Item({ item, onRemove }) {
                 {
                     number > 1 ? <button onClick={onDecrement} className="btn btn-danger btn-sm action-button">-</button> : <button onClick={onDecrement} className="btn btn-danger btn-sm action-button" disabled>-</button>
                 }
-                <button onClick={() => onRemove(item.id)} className="btn btn-warning btn-sm action-button">
+                <button onClick={() => onRemove(itemSale.id)} className="btn btn-warning btn-sm action-button">
                     <img src={trash} alt="Borrar"/>
                 </button>
             </td>
-            <td>$ <span>{item.precio}</span></td>
+            <td>$ <span>{itemSale.precio}</span></td>
         </tr>
     );
 }

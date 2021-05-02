@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import Cart from "../Cart/Cart";
 import { CartContext } from '../../context/cartContext';
 
-export default function List({ list, onRemove }) {
+export default function CartList({ list, onRemove }) {
     const { cart } = useContext(CartContext);
     console.log(list) //para test
 
@@ -18,9 +18,9 @@ export default function List({ list, onRemove }) {
                         <th scope="col">Total</th>
                     </tr>
                 </thead>
-                <tbody id="items">
+                <tbody>
                     {list.map(item => (
-                        <Cart key={item.id} item={item} onRemove={onRemove} />
+                        <Cart key={item.id} itemSale={item} onRemove={onRemove} />
                     ))}
                 </tbody>
                 <tfoot>

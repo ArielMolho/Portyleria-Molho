@@ -11,7 +11,7 @@ export default function CartPageContainer() {
     const [list, setList] = useState(cart);
 
     function handleRemove(id) {
-        const newList = list.filter(item => item.id !== id);
+        const newList = list.filter((item) => item.id !== id);
         setList(newList);
     }
 
