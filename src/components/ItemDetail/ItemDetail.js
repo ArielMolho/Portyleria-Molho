@@ -1,40 +1,36 @@
 import React, { useState, useContext } from "react";
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
-//import {Link} from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { CartContext } from '../../context/cartContext';
 
 export default function ItemDetail({data}) {
-  const { cart } = useContext(CartContext);
-
-  // const sendCarrito= {
-  //   categoria: data.Categoria,
-  //   tipo: data.Tipo,
-  //   descripción: data.Descripción,
-  //   precio: data.Precio,
-  // }
-
+  const { addToCart } = useContext(CartContext);
+  
   const [show, setShow] = useState(true);
   let cantidadCompra;
 
-  function buttonFinalizar (cantidad){
+  function addButton (cantidad){
     setShow({
       hidden: true
     });
     cantidadCompra = cantidad;
-    console.log(cantidadCompra); //para control
-    // sendCarrito.cantidad = cantidadCompra;
-    // console.log(sendCarrito); //para control
-    cart.id = data.id;
-    //cart.categoria = data.Categoria;
-    cart.tipo = data.Tipo;
-    //cart.descripción = data.Descripción;
-    cart.precio = data.Precio;
-    cart.cantidad = cantidadCompra;
-    console.log(cart) //para test
+    console.log("el valor que viene de ItemCount es: ", cantidadCompra); //para control
+    
+    productSelected();
   }
   
+  function productSelected(){
+    const newItem = {
+      id: data.id,
+      tipo: data.Tipo,
+      precio: data.Precio,
+      cantidad: cantidadCompra
+    };
+    console.log(newItem);
+    addToCart(newItem);
+  }
+
   let history = useHistory();
 
   return (
@@ -50,10 +46,9 @@ export default function ItemDetail({data}) {
                   <p className="card-text">Precio: $ {data.Precio}</p>
               </div>
               <div>
-                  <ItemCount producto={data.Tipo} finalizar={buttonFinalizar}/>
+                  <ItemCount finalizar={addButton}/>
                   <button hidden={!show.hidden} id="button-finalizar" type="button" className="btn btn-warning"
-                  onClick={() => history.push(`/cart`)}>
-                  Ver Carrito</button>
+                  onClick={() => history.push(`/cart`)}>Ver Carrito</button>
               </div>
           </div>
       </div>
@@ -62,26 +57,16 @@ export default function ItemDetail({data}) {
 }
 
 /*
-                  <button hidden={!show.hidden} id="button-finalizar" type="button" className="btn btn-warning"
-                  onClick={() => history.push({pathname: `/cart`, state: {cart: {sendCarrito} }})}>
-                  Finalizar Compra</button>
-                  {!show &&
-                    <button id="button-finalizar" type="button" className="btn btn-warning">
-                      <Link to={{
-                        pathname: `/cart`,
-                        //cart: {addCart}
-                        state: { cart: {addCart} }
-                      }} 
-                      className="link-text">Finalizar Compra</Link>
-                    </button>
-                  }
-                  {!show ?
-                    <button id="button-finalizar" type="button" className="btn btn-warning"
-                    onClick={() => history.push({pathname: `/cart`, state: {cart: {sendCarrito} }})}>
-                    Finalizar Compra</button>
-                    : <button id="button-finalizar" type="button" className="btn btn-warning"
-                    onClick={() => history.push({pathname: `/cart`, state: {cart: {sendCarrito} }})}>
-                    Finalizar Compra</button>
-                  }
-
+>> Consigna: implementa React Context para mantener el estado de compra del user, siguiendo los detalles del manual.
+>>Aspectos a incluir en el entregable:
+CartContext.js con el context y su custom provider (Impórtalo en App.js)
+Al clickear comprar en ItemDetail se debe guardar en el CartContext el producto y su cantidad en forma de objeto
+{ item: {} , quantity }
+Detalle importante: CartContext debe tener la lógica incorporada de no aceptar duplicados y mantener su consistencia.
+Métodos recomendados: 
+- addItem(item, quantity) // agregar cierta cantidad de un ítem al carrito
+- removeItem(itemId) // Remover un item del cart por usando su id
+- clear() // Remover todos los items
+- isInCart: (id) => true|false
+https://docs.google.com/presentation/d/16HEXHQMCKW3igZAhcQ0mtmDaacRkJta5BoE94mBINlc/edit#slide=id.ga2be900eb4_0_0
 */

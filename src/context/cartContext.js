@@ -5,29 +5,43 @@ export const CartContext = createContext([]);
 export default function AppContextProvider({defaultValue= [], children}){
     const [cart, setCart] = useState(defaultValue);
 
-    function getFromCart (id){
-        return cart.find(obj => obj.id === id)
+    const [totalPrice, setTotalPrice] = useState(0);
+	const [totalItems, setTotalItems] = useState(0);
+
+    function isInCart (id) {
+        return cart.some(item => item.id === id)
     }
 
-    function isInCart(id){
-        return id === undefined ? undefined : getFromCart !== undefined
+    function clearCart(){
+        setCart([]);
     }
 
-    function addToCart(obj){
-        if(isInCart(obj && obj.id)) {
-            console.log("Cannot add an exisiting obj to cart")
-            return;
+    function addToCart({id, tipo, precio, cantidad}) {
+        const isCurrentInCart = isInCart(id)
+        if (isCurrentInCart) {
+            const newCart = cart.map(item => {
+                if (item.id === id) {
+                    return {
+                        ...item,
+                        cantidad: cantidad + item.cantidad
+                    }
+                }
+                return item
+            })
+            return setCart([...newCart])
         }
-        setCart([...cart, obj]);
+        setCart([...cart, {id, tipo, precio, cantidad}])
     }
 
     return (
         <CartContext.Provider value={
             {
-                cart, 
+                cart,
+                setCart,
                 addToCart,
-                isInCart,
-                cartSize: cart.length
+                clearCart,
+                totalPrice, 
+                totalItems
             }
         }>
             {children}

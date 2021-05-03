@@ -3,7 +3,7 @@ import Cart from "../Cart/Cart";
 import { CartContext } from '../../context/cartContext';
 
 export default function CartList({ list, onRemove }) {
-    const { cart } = useContext(CartContext);
+    const { clearCart } = useContext(CartContext);
     console.log(list) //para test
 
     return (
@@ -20,23 +20,24 @@ export default function CartList({ list, onRemove }) {
                 </thead>
                 <tbody>
                     {list.map(item => (
-                        <Cart key={item.id} itemSale={item} onRemove={onRemove} />
+                        <Cart key={item.id} itemSale={item} onRemove={onRemove}/>
                     ))}
                 </tbody>
                 <tfoot>
-                    { cart.id === undefined ? 
+                    { list === undefined ? 
                         <tr id="footer-carrito">
                             <th className="empty-cart" scope="row" colSpan="5">Carrito vacío - comience a comprar!</th>
                         </tr>
                         :
                         <tr id="footer-carrito">
-                            <th scope="row" colSpan="2">Total productos</th>
-                            <td>{}</td>
+                            <th></th>
+                            <td></td>
                             <td>
-                                <button className="btn btn-danger btn-sm" id="vaciar-carrito">
+                                <button className="btn btn-danger btn-sm" id="vaciar-carrito" onClick={clearCart}>
                                     Vaciar Carrito
                                 </button>
                             </td>
+                            <td className="font-weight-bold">Total a abonar</td>
                             <td className="font-weight-bold">$ <span>{}</span></td>
                         </tr>
                     }
