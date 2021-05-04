@@ -5,15 +5,11 @@ export const CartContext = createContext([]);
 export default function AppContextProvider({defaultValue= [], children}){
     const [cart, setCart] = useState(defaultValue);
 
-    const [totalPrice, setTotalPrice] = useState(0);
-	const [totalItems, setTotalItems] = useState(0);
+    // const [totalPrice, setTotalPrice] = useState(0);
+	// const [totalItems, setTotalItems] = useState(0);
 
     function isInCart (id) {
         return cart.some(item => item.id === id)
-    }
-
-    function clearCart(){
-        setCart([]);
     }
 
     function addToCart({id, tipo, precio, cantidad}) {
@@ -33,6 +29,10 @@ export default function AppContextProvider({defaultValue= [], children}){
         setCart([...cart, {id, tipo, precio, cantidad}])
     }
 
+    function clearCart(){
+        setCart([]);
+    }
+
     return (
         <CartContext.Provider value={
             {
@@ -40,8 +40,8 @@ export default function AppContextProvider({defaultValue= [], children}){
                 setCart,
                 addToCart,
                 clearCart,
-                totalPrice, 
-                totalItems
+                // totalPrice, 
+                // totalItems
             }
         }>
             {children}

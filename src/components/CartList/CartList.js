@@ -3,9 +3,9 @@ import Cart from "../Cart/Cart";
 import { CartContext } from '../../context/cartContext';
 
 export default function CartList({ list, onRemove }) {
-    const { clearCart } = useContext(CartContext);
-    console.log(list) //para test
-
+    const { cart, clearCart } = useContext(CartContext);
+    console.log(cart) //para test
+    //console.log(cart[0].cantidad) //para test
     return (
         <div>
             <table className="table">
@@ -19,7 +19,7 @@ export default function CartList({ list, onRemove }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {list.map(item => (
+                    {cart.map(item => (
                         <Cart key={item.id} itemSale={item} onRemove={onRemove}/>
                     ))}
                 </tbody>

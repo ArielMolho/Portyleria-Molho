@@ -7,10 +7,10 @@ import {Link} from 'react-router-dom';
 
 export default function CartWidget () {
     const { cart } = useContext(CartContext);
-
+    
     return(
         <div className="navbar-cart">
-            { cart.id === undefined ? 
+            { cart.length === 0 ? 
                 <Link to={`/cart`}>
                     <img src={emptycart} className="cart-icon" width="30" height="30" alt="Cart" loading="lazy"/>
                 </Link>

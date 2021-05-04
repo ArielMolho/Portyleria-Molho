@@ -6,7 +6,7 @@ import CartList from '../../components/CartList/CartList';
 
 export default function CartPageContainer() {
     const { cart, setCart } = useContext(CartContext);
-    console.log(cart) //para test
+    //console.log(cart) //para test
     
     function handleRemove(id) {
         const newcart = cart.filter((item) => item.id !== id);
