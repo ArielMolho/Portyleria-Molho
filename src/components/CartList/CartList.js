@@ -14,7 +14,7 @@ export default function CartList({ list, onRemove }) {
                         <th scope="col">#</th>
                         <th scope="col">Item</th>
                         <th scope="col">Cantidad</th>
-                        <th scope="col">Acción</th>
+                        <th scope="col">Confirmar/Eliminar</th>
                         <th scope="col">Total</th>
                     </tr>
                 </thead>
@@ -43,6 +43,7 @@ export default function CartList({ list, onRemove }) {
                     }
                 </tfoot>
             </table>
+            <p className="cart-remark">IMPORTANTE: Antes de continuar con su compra por favor confirme cada elemento apretando el botón OK de cada uno.</p>
         </div>
         );
     }

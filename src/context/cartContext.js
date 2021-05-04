@@ -29,6 +29,23 @@ export default function AppContextProvider({defaultValue= [], children}){
         setCart([...cart, {id, tipo, precio, cantidad}])
     }
 
+    function updateToCart({id, tipo, precio, cantidad}) {
+        const isCurrentInCart = isInCart(id)
+        if (isCurrentInCart) {
+            const newCart = cart.map(item => {
+                if (item.id === id) {
+                    return {
+                        ...item,
+                        cantidad: cantidad
+                    }
+                }
+                return item
+            })
+            return setCart([...newCart])
+        }
+        setCart([...cart, {id, tipo, precio, cantidad}])
+    }
+
     function clearCart(){
         setCart([]);
     }
@@ -40,6 +57,7 @@ export default function AppContextProvider({defaultValue= [], children}){
                 setCart,
                 addToCart,
                 clearCart,
+                updateToCart,
                 // totalPrice, 
                 // totalItems
             }

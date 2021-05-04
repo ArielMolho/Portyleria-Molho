@@ -1,26 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import trash from '../../assets/images/delete.png';
+import { CartContext } from '../../context/cartContext';
 
 export default function Cart({ itemSale, onRemove }) {
     const [number, setNumber] = useState(itemSale.cantidad);
-    //console.log(itemSale) //para test
-
+    const { updateToCart } = useContext(CartContext);
+    console.log(number); //para test
+    
     function onIncrement() {
         setNumber(number + 1);
-        //changeQuantity(number);
-        //console.log(itemSale.cantidad);
+        itemSale.cantidad = number;
     }
 
     function onDecrement() {
         setNumber(number - 1);
-        //changeQuantity(number);
-        //console.log(itemSale.cantidad);
+        itemSale.cantidad = number;
     }
 
-    // function changeQuantity(number){
-    //     itemSale.cantidad = number;
-    //     console.log(itemSale.cantidad);
-    // }
+    const [show, setShow] = useState(false);
+
+    function updateQuantity(){
+        const newItem = {
+            id: itemSale.id,
+            tipo: itemSale.tipo,
+            precio: itemSale.precio,
+            cantidad: number
+        };
+        console.log(newItem);
+        updateToCart(newItem);
+        setShow({
+            hidden: true
+        });
+    }
 
     var subTotal = itemSale.precio*number;
 
@@ -28,14 +39,17 @@ export default function Cart({ itemSale, onRemove }) {
         <tr>
             <th scope="row">{itemSale.id}</th>
             <td>{itemSale.tipo}</td>
-            <td>{number}</td>
             <td>
                 {
-                    number < 5 ? <button onClick={onIncrement} className="btn btn-info btn-sm action-button">+</button> : <button onClick={onIncrement} className="btn btn-info btn-sm action-button" disabled>+</button>
+                    number < 5 ? <button onClick={onIncrement} hidden={show.hidden} className="btn btn-info btn-sm action-button">+</button> : <button className="btn btn-info btn-sm action-button" disabled>+</button>
                 }
+                <span className="cart-visual">{number}</span>
                 {
-                    number > 1 ? <button onClick={onDecrement} className="btn btn-danger btn-sm action-button">-</button> : <button onClick={onDecrement} className="btn btn-danger btn-sm action-button" disabled>-</button>
+                    number > 1 ? <button onClick={onDecrement} hidden={show.hidden} className="btn btn-danger btn-sm action-button">-</button> : <button className="btn btn-danger btn-sm action-button" disabled>-</button>
                 }
+            </td>
+            <td>
+                <button onClick={updateQuantity} className="btn btn-success btn-sm action-button">OK</button>
                 <button onClick={() => onRemove(itemSale.id)} className="btn btn-warning btn-sm action-button">
                     <img src={trash} alt="Borrar"/>
                 </button>
@@ -44,23 +58,3 @@ export default function Cart({ itemSale, onRemove }) {
         </tr>
     );
 }
-
-/*
-    function onIncrement() {
-        setNumber(number + 1);
-        changeQuantity(number);
-        console.log(itemSale.cantidad);
-    }
-
-    function onDecrement() {
-        setNumber(number - 1);
-        changeQuantity(number);
-        console.log(itemSale.cantidad);
-    }
-
-    function changeQuantity(number){
-        itemSale.cantidad = number;
-    }
-
-    var subTotal = itemSale.precio*itemSale.cantidad;
-*/
