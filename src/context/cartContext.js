@@ -1,12 +1,13 @@
-import {createContext, useState } from 'react';
+import {createContext, useState, useEffect } from 'react';
 
 export const CartContext = createContext([]);
 
-export default function AppContextProvider({defaultValue= [], children}){
-    const [cart, setCart] = useState(defaultValue);
+export default function AppContextProvider({children}){
+    const [cart, setCart] = useState([]);
 
-    // const [totalPrice, setTotalPrice] = useState(0);
-	// const [totalItems, setTotalItems] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
+	const [totalItems, setTotalItems] = useState(0);
+    const [count, setCount] = useState();
 
     function isInCart (id) {
         return cart.some(item => item.id === id)
@@ -50,6 +51,20 @@ export default function AppContextProvider({defaultValue= [], children}){
         setCart([]);
     }
 
+    useEffect(() => {
+		const Total = () => {
+			let totalPrice = 0;
+			let totalItems = 0;
+			for (const Item of cart) {
+				totalPrice = totalPrice + Item.precio * Item.cantidad;
+				totalItems += Item.cantidad;
+			}
+			setTotalItems(totalItems);
+			setTotalPrice(totalPrice.toFixed(2));
+		};
+		Total();
+	}, [cart]);
+
     return (
         <CartContext.Provider value={
             {
@@ -58,8 +73,10 @@ export default function AppContextProvider({defaultValue= [], children}){
                 addToCart,
                 clearCart,
                 updateToCart,
-                // totalPrice, 
-                // totalItems
+                totalPrice, 
+                totalItems,
+                count,
+                setCount
             }
         }>
             {children}

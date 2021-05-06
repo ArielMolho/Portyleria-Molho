@@ -3,9 +3,9 @@ import Cart from "../Cart/Cart";
 import { CartContext } from '../../context/cartContext';
 
 export default function CartList({ list, onRemove }) {
-    const { cart, clearCart } = useContext(CartContext);
+    const { cart, clearCart, totalPrice } = useContext(CartContext);
     console.log(cart) //para test
-    //console.log(cart[0].cantidad) //para test
+    
     return (
         <div>
             <table className="table">
@@ -38,7 +38,7 @@ export default function CartList({ list, onRemove }) {
                                 </button>
                             </td>
                             <td className="font-weight-bold">Total a abonar</td>
-                            <td className="font-weight-bold">$ <span>{}</span></td>
+                            <td className="font-weight-bold">$ <span>{totalPrice}</span></td>
                         </tr>
                     }
                 </tfoot>

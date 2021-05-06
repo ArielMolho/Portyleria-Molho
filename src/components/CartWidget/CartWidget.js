@@ -6,19 +6,20 @@ import { CartContext } from '../../context/cartContext';
 import {Link} from 'react-router-dom';
 
 export default function CartWidget () {
-    const { cart } = useContext(CartContext);
+    const { cart, totalItems } = useContext(CartContext);
     
     return(
         <div className="navbar-cart">
             { cart.length === 0 ? 
                 <Link to={`/cart`}>
-                    <img src={emptycart} className="cart-icon" width="30" height="30" alt="Cart" loading="lazy"/>
+                    <img src={emptycart} className="cart-icon" width="40" height="40" alt="Cart" loading="lazy"/>
                 </Link>
                 :
                 <Link to={`/cart`}>
-                    <img src={fullcart} className="cart-icon" width="30" height="30" alt="Cart" loading="lazy"/>
+                    <img src={fullcart} className="cart-icon" width="40" height="40" alt="Cart" loading="lazy"/>
                 </Link>
             }
+            { totalItems ? <span className='total-items'>{totalItems}</span> : null}
         </div>
     )
 }

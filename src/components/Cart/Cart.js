@@ -33,19 +33,17 @@ export default function Cart({ itemSale, onRemove }) {
         });
     }
 
-    var subTotal = itemSale.precio*number;
-
     return (
         <tr>
             <th scope="row">{itemSale.id}</th>
             <td>{itemSale.tipo}</td>
             <td>
                 {
-                    number < 5 ? <button onClick={onIncrement} hidden={show.hidden} className="btn btn-info btn-sm action-button">+</button> : <button className="btn btn-info btn-sm action-button" disabled>+</button>
+                    number < 5 ? <button onClick={onIncrement} hidden={show.hidden} className="btn btn-info btn-sm action-button">+</button> : <button hidden={show.hidden} className="btn btn-info btn-sm action-button" disabled>+</button>
                 }
                 <span className="cart-visual">{number}</span>
                 {
-                    number > 1 ? <button onClick={onDecrement} hidden={show.hidden} className="btn btn-danger btn-sm action-button">-</button> : <button className="btn btn-danger btn-sm action-button" disabled>-</button>
+                    number > 1 ? <button onClick={onDecrement} hidden={show.hidden} className="btn btn-danger btn-sm action-button">-</button> : <button hidden={show.hidden} className="btn btn-danger btn-sm action-button" disabled>-</button>
                 }
             </td>
             <td>
@@ -54,7 +52,7 @@ export default function Cart({ itemSale, onRemove }) {
                     <img src={trash} alt="Borrar"/>
                 </button>
             </td>
-            <td>$ <span>{subTotal}</span></td>
+            <td>$ <span>{(itemSale.precio*number).toFixed(2)}</span></td>
         </tr>
     );
 }
