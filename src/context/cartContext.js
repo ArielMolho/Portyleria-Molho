@@ -65,6 +65,11 @@ export default function AppContextProvider({children}){
 		Total();
 	}, [cart]);
 
+    function handleRemove(id) {
+        const newcart = cart.filter((item) => item.id !== id);
+        setCart(newcart);
+    }
+
     return (
         <CartContext.Provider value={
             {
@@ -73,6 +78,7 @@ export default function AppContextProvider({children}){
                 addToCart,
                 clearCart,
                 updateToCart,
+                handleRemove,
                 totalPrice, 
                 totalItems,
                 count,

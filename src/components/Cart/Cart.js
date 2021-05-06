@@ -4,7 +4,7 @@ import { CartContext } from '../../context/cartContext';
 
 export default function Cart({ itemSale, onRemove }) {
     const [number, setNumber] = useState(itemSale.cantidad);
-    const { updateToCart } = useContext(CartContext);
+    const { updateToCart, handleRemove } = useContext(CartContext);
     console.log(number); //para test
     
     function onIncrement() {
@@ -48,7 +48,7 @@ export default function Cart({ itemSale, onRemove }) {
             </td>
             <td>
                 <button onClick={updateQuantity} className="btn btn-success btn-sm action-button">OK</button>
-                <button onClick={() => onRemove(itemSale.id)} className="btn btn-warning btn-sm action-button">
+                <button onClick={() => handleRemove(itemSale.id)} className="btn btn-warning btn-sm action-button">
                     <img src={trash} alt="Borrar"/>
                 </button>
             </td>
