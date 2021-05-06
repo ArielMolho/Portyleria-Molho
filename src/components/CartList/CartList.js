@@ -10,7 +10,6 @@ export default function CartList() {
     const sortedCart = Object.keys(cart).map(key => cart[key]);
     sortedCart.sort((a, b) => cartOrder.indexOf(a.categoria) - cartOrder.indexOf(b.categoria));
     console.log(sortedCart); //para test
-    //setCart(sortedCart);
 
     return (
         <div>
@@ -20,7 +19,7 @@ export default function CartList() {
                         <th scope="col">Categoría</th>
                         <th scope="col">Item</th>
                         <th scope="col">Cantidad</th>
-                        <th scope="col">Confirmar/Eliminar</th>
+                        <th scope="col">Eliminar</th>
                         <th scope="col">Total</th>
                     </tr>
                 </thead>

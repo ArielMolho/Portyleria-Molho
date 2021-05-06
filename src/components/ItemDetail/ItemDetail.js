@@ -56,36 +56,3 @@ export default function ItemDetail({data}) {
     </div>
   )
 }
-
-/*
-DESAFIO 10
-La parte de agregar y restar cantidad dentro del cart tendrias que hacerlo tambien modificando la cantidad
-en el cart del context porque si no apretas "ok" no se guardan los cambios y si haces cambios,
-salis del cart y volves perdes los cambios.
-*/
-/*
-  const { addToCart, count, setCount } = useContext(CartContext);
-  
-  const [show, setShow] = useState(true);
-  
-  function addButton (cantidad){
-    setShow({
-      hidden: true
-    });
-    setCount(cantidad);
-    console.log("el valor que viene de ItemCount es: ", count); //para control
-    console.log(count);
-    productSelected();
-  }
-  
-  function productSelected(){
-    const newItem = {
-      id: data.id,
-      tipo: data.Tipo,
-      precio: data.Precio,
-      cantidad: count
-    };
-    console.log(newItem);
-    addToCart(newItem);
-  }
-*/

@@ -7,7 +7,6 @@ export default function AppContextProvider({children}){
 
     const [totalPrice, setTotalPrice] = useState(0);
 	const [totalItems, setTotalItems] = useState(0);
-    const [count, setCount] = useState();
 
     function isInCart (id) {
         return cart.some(item => item.id === id)
@@ -81,8 +80,6 @@ export default function AppContextProvider({children}){
                 handleRemove,
                 totalPrice, 
                 totalItems,
-                count,
-                setCount
             }
         }>
             {children}
