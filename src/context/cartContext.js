@@ -13,7 +13,7 @@ export default function AppContextProvider({children}){
         return cart.some(item => item.id === id)
     }
 
-    function addToCart({id, tipo, precio, cantidad}) {
+    function addToCart({id, categoria, tipo, precio, cantidad}) {
         const isCurrentInCart = isInCart(id)
         if (isCurrentInCart) {
             const newCart = cart.map(item => {
@@ -27,10 +27,10 @@ export default function AppContextProvider({children}){
             })
             return setCart([...newCart])
         }
-        setCart([...cart, {id, tipo, precio, cantidad}])
+        setCart([...cart, {id, categoria, tipo, precio, cantidad}])
     }
 
-    function updateToCart({id, tipo, precio, cantidad}) {
+    function updateToCart({id, categoria, tipo, precio, cantidad}) {
         const isCurrentInCart = isInCart(id)
         if (isCurrentInCart) {
             const newCart = cart.map(item => {
@@ -44,7 +44,7 @@ export default function AppContextProvider({children}){
             })
             return setCart([...newCart])
         }
-        setCart([...cart, {id, tipo, precio, cantidad}])
+        setCart([...cart, {id, categoria, tipo, precio, cantidad}])
     }
 
     function clearCart(){

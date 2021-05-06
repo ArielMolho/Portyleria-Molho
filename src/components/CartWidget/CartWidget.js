@@ -17,9 +17,9 @@ export default function CartWidget () {
                 :
                 <Link to={`/cart`}>
                     <img src={fullcart} className="cart-icon" width="40" height="40" alt="Cart" loading="lazy"/>
+                    { totalItems ? <span className='total-items'>{totalItems}</span> : null}
                 </Link>
             }
-            { totalItems ? <span className='total-items'>{totalItems}</span> : null}
         </div>
     )
 }

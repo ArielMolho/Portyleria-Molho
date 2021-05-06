@@ -5,13 +5,19 @@ import { CartContext } from '../../context/cartContext';
 export default function CartList() {
     const { cart, clearCart, totalPrice } = useContext(CartContext);
     console.log(cart) //para test
-    
+
+    const cartOrder = ["alfajor", "cookie", "muffin", "pasta-frola", "porty-box", "scon"]
+    const sortedCart = Object.keys(cart).map(key => cart[key]);
+    sortedCart.sort((a, b) => cartOrder.indexOf(a.categoria) - cartOrder.indexOf(b.categoria));
+    console.log(sortedCart); //para test
+    //setCart(sortedCart);
+
     return (
         <div>
             <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Categoría</th>
                         <th scope="col">Item</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Confirmar/Eliminar</th>
@@ -19,18 +25,18 @@ export default function CartList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {cart.map(item => (
+                    {sortedCart.map(item => (
                         <Cart key={item.id} itemSale={item} />
                     ))}
                 </tbody>
                 <tfoot>
-                    { cart === undefined ? 
+                    { cart.length === 0 ? 
                         <tr id="footer-carrito">
                             <th className="empty-cart" scope="row" colSpan="5">Carrito vacío - comience a comprar!</th>
                         </tr>
                         :
                         <tr id="footer-carrito">
-                            <th></th>
+                            <td></td>
                             <td></td>
                             <td>
                                 <button className="btn btn-danger btn-sm" id="vaciar-carrito" onClick={clearCart}>

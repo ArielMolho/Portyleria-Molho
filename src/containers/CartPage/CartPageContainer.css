@@ -17,6 +17,10 @@
     width: 34px;
 }
 
+.table{
+    padding: 1rem;
+}
+
 .cart-visual{
     border: 1px solid lightgray;
     text-align: center;
@@ -29,6 +33,15 @@
     text-align: right;
     padding-right: 1rem;
     font-style: italic;
+    animation-name: cart-remark;
+    animation-duration: 4s;
+    animation-iteration-count: infinite
+}
+
+@keyframes cart-remark {
+    0%   {color:red;}
+    50%  {color: green;}
+    100% {color:blue;}
 }
 
 .return-button{

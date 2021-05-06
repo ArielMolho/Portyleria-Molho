@@ -22,6 +22,7 @@ export default function Cart({ itemSale, onRemove }) {
     function updateQuantity(){
         const newItem = {
             id: itemSale.id,
+            categoria: itemSale.categoria,
             tipo: itemSale.tipo,
             precio: itemSale.precio,
             cantidad: number
@@ -33,9 +34,13 @@ export default function Cart({ itemSale, onRemove }) {
         });
     }
 
+    function capitalizarPrimeraLetra(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+    
     return (
         <tr>
-            <th scope="row">{itemSale.id}</th>
+            <th scope="row">{capitalizarPrimeraLetra(itemSale.categoria)}</th>
             <td>{itemSale.tipo}</td>
             <td>
                 {
