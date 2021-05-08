@@ -15,7 +15,7 @@ export default function ItemListContainer({name, greeting}) {
     },[])
 
     return(
-        <div>
+        <div className="product-body">
             <div className="header-greeting">
                 <p className="header-text">{greeting}</p>
                 <p className="header-text">Tentate con nuestros <Link to={`/products/porty-box`} className="header-portybox">{name}</Link>! Ideales para compartir al aire libre.</p>

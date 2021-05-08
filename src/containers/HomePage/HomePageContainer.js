@@ -8,14 +8,14 @@ import {Link} from 'react-router-dom';
 
 export default function HomePageContainer() {
     return(
-        <div>
-            <div className="d-flex flex-row mt-3">
+        <div className="home-body">
+            <div className="d-flex flex-row">
                 <img src={portybox2} className="d-block w-25 h-25" alt="PortyBox"/>
                 <img src={portybox3} className="d-block w-25 h-25" alt="PortyBox"/>
                 <img src={lemonies} className="d-block w-25 h-25"  alt="Lemonies"/>
                 <img src={torta} className="d-block w-25 h-25"  alt="Torta"/>
             </div>
-            <div className="card w-50 mx-auto mt-5 mb-5 home-card">
+            <div className="card w-50 mx-auto home-card">
                 <div className="card-body">
                     <h5 className="card-title text-center home-card-title">Hola! soy Romi Portillo</h5>
                     <p className="card-text home-card-text">Bienvenid@s a Portyleria. Mi emprendimiento personal de pasteleria con amor.</p>

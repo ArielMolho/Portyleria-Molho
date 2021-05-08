@@ -48,7 +48,6 @@ export default function CartList() {
                     }
                 </tfoot>
             </table>
-            <p className="cart-remark">IMPORTANTE: Antes de continuar con su compra por favor confirme cada elemento apretando el botón OK de cada uno.</p>
         </div>
         );
     }

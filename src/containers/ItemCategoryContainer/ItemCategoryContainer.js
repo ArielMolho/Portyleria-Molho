@@ -14,11 +14,10 @@ export default function ItemCategoryContainer() {
         getPosts()
             .then(res => setData(
                 res.filter(function(item){
-                    return item.Categoria === categoryId;
+                    return item.category === categoryId;
                 })
                 ))
     },[categoryId])
-
     
     return (
         <div>

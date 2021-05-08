@@ -23,9 +23,9 @@ export default function ItemDetail({data}) {
   function productSelected(){
     const newItem = {
       id: data.id,
-      categoria: data.Categoria,
-      tipo: data.Tipo,
-      precio: data.Precio,
+      categoria: data.category,
+      tipo: data.title,
+      precio: data.price,
       cantidad: cantidadCompra
     };
     console.log(newItem);
@@ -38,13 +38,13 @@ export default function ItemDetail({data}) {
     <div className="card mb-3 w-100 card-details">
       <div className="row no-gutters">
           <div className="col-md-6">
-              <img src={data.Img} className="card-img-top" alt={data.Categoria} />
+              <img src={data.image} className="card-img-top" alt={data.category} />
           </div>
           <div className="col-md-6">
               <div className="card-body">
-                  <h5 className="card-title">{data.Tipo}</h5>
-                  <p className="card-text">{data.Descripción}</p>
-                  <p className="card-text">Precio: $ {data.Precio}</p>
+                  <h5 className="card-title">{data.title}</h5>
+                  <p className="card-text">{data.description}</p>
+                  <p className="card-text">Precio: $ {data.price}</p>
               </div>
               <div>
                   <ItemCount finalizar={addButton}/>
