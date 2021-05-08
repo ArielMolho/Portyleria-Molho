@@ -9,12 +9,7 @@ import Footer from '../../components/Footer/Footer';
 import CartPageContainer from '../CartPage/CartPageContainer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-// import { useContext } from 'react';
-// import { CartContext } from '../../context/cartContext';
-
 export default function AppRouter() {
-    // const { data } = useContext(CartContext);
-    // console.log(data) //sólo para probar que lo lee.
     return (
         <Router>
             <NavBar />
