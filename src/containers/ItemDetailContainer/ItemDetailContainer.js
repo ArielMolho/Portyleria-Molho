@@ -34,13 +34,3 @@ export default function ItemDetailContainer() {
         </div>
     )
 }
-//<ItemDetail data={data[0]}/>
-/*
-            {
-            data.map((data) => { 
-                return (
-                    <ItemDetail key={data.id} data={data} />
-                )
-                })
-            }
-*/

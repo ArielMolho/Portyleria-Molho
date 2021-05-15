@@ -34,3 +34,29 @@
     background-color: rgb(201, 105, 105);
     border: rgb(201, 105, 105);
 }
+
+.end-button{
+    margin: 1rem 1rem 2rem 1rem;
+}
+
+.order-form{
+    width: 30rem;
+    border-radius: 10px;
+    margin: 1rem 30% 4rem 30%;
+    border: solid 1px black;
+    padding: 10px;
+}
+
+.form-title{
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 1rem;
+}
+
+.check-text{
+    font-family: 'Aguafina Script', cursive;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
