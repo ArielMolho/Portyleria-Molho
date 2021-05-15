@@ -3,7 +3,7 @@ import { CartContext } from '../../context/cartContext';
 import check from '../../assets/images/checked128px.png';
 import {useHistory} from 'react-router-dom';
 
-const { createOrder, getCollection } = require('../../services/postService');
+const { createOrder, getCollection, timeStamp } = require('../../services/postService');
 
 export default function OrderPageContainer() {
     const { cart, clearCart, totalPrice } = useContext(CartContext);
@@ -12,6 +12,7 @@ export default function OrderPageContainer() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState(0);
+    //const [orderId, setOrderId] = useState();
 
     useEffect (() => {
         const unsuscribe = getCollection().onSnapshot(snapshot => {
@@ -47,13 +48,11 @@ export default function OrderPageContainer() {
             } ,
             items: cart,
             total: totalPrice,
-            //date: firebase.firestore.Timestamp.fromDate(new Date()),
+            date: timeStamp(),
         }
-        console.log(newOrder);
+        console.log(newOrder); // para test
         createOrder(newOrder)
-            .then(data => {
-            setPosts([...posts, data]);
-        })
+            .then(data => { setPosts([...posts, data]);})
     }
 
     let history = useHistory();
@@ -75,16 +74,17 @@ export default function OrderPageContainer() {
                     <button onClick={placeOrder} type="submit" className="btn btn-primary mt-3 mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Confirmar Pedido</button>
                 </div>
             </form>
-            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-body d-flex flex-column justify-content-center align-items-center">
                             <img src={check} className="mt-3 mb-3" width="150" height="150" alt="check"/>
                             <p className="check-text">Su pedido ha sido confirmado!</p>
-                            <p className="check-text">En breve estaremos en contacto para coordinar la entrega y el pago.</p>
+                            <p className="check-contact">Código de confirmación:</p>
+                            <p className="check-contact">En breve estaremos en contacto para coordinar la entrega y el pago.</p>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={closeAndReset}>Close</button>
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={closeAndReset}>Cerrar</button>
                         </div>
                     </div>
                 </div>
