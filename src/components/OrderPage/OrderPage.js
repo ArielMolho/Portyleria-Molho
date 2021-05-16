@@ -1,30 +1,17 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useContext} from "react";
 import { CartContext } from '../../context/cartContext';
 import check from '../../assets/images/checked128px.png';
 import {useHistory} from 'react-router-dom';
 
-const { createOrder, getCollection, timeStamp } = require('../../services/postService');
+const { createOrder } = require('../../services/postService');
 
 export default function OrderPageContainer() {
     const { cart, clearCart, totalPrice } = useContext(CartContext);
     
-    const [posts, setPosts] = useState([]);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState(0);
-    //const [orderId, setOrderId] = useState();
-
-    useEffect (() => {
-        const unsuscribe = getCollection().onSnapshot(snapshot => {
-            const postOrders = snapshot.docs.map(doc => {
-                return {id: doc.id, ...doc.data()}
-            });
-            setPosts(postOrders);
-        })
-        return () => {
-            unsuscribe();
-        }
-    }, [])
+    const [orderId, setOrderId] = useState('');
 
     function handleNameChange(event){
         setName(event.target.value)
@@ -38,21 +25,15 @@ export default function OrderPageContainer() {
         setPhone(event.target.value)
     }
 
-    function placeOrder(event){
+    function placeOrder(event) {
         event.preventDefault()
-        const newOrder = {
-            buyer: {
-                name: name,
-                email: email,
-                phone: phone
-            } ,
-            items: cart,
-            total: totalPrice,
-            date: timeStamp(),
-        }
-        console.log(newOrder); // para test
-        createOrder(newOrder)
-            .then(data => { setPosts([...posts, data]);})
+        const buyer = {
+            name: name,
+            email: email,
+            phone: phone
+        };
+        createOrder(buyer, cart, totalPrice)
+            .then(id => setOrderId(id));
     }
 
     let history = useHistory();
@@ -80,7 +61,7 @@ export default function OrderPageContainer() {
                         <div className="modal-body d-flex flex-column justify-content-center align-items-center">
                             <img src={check} className="mt-3 mb-3" width="150" height="150" alt="check"/>
                             <p className="check-text">Su pedido ha sido confirmado!</p>
-                            <p className="check-contact">Código de confirmación:</p>
+                            <p className="check-contact">Código de confirmación: {orderId}</p>
                             <p className="check-contact">En breve estaremos en contacto para coordinar la entrega y el pago.</p>
                         </div>
                         <div className="modal-footer">

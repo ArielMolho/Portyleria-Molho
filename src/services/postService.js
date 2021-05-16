@@ -24,11 +24,20 @@ export function getCollection(){
   return orderCollection;
 }
 
-export async function createOrder(post){
-  orderCollection.add(post)
-    .then(({id}) => {console.log(id)});
-}
-
-export function timeStamp(){
-  return firebase.firestore.Timestamp.fromDate(new Date())
-}
+export function createOrder(buyer, items, total) {
+  return orderCollection
+    .add({
+      buyer: buyer,
+      items: items,
+      date: firebase.firestore.Timestamp.fromDate(new Date()),
+      total: total,
+    })
+    .then(function (oderId) {
+      console.log("Confirmación de compra Nº: ", oderId.id);
+      return oderId.id;
+    })
+    .catch(function (error) {
+      console.error(error);
+      return "Error procesando pedido";
+    });
+  }  
