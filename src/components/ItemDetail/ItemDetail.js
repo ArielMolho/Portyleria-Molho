@@ -15,7 +15,6 @@ export default function ItemDetail({data}) {
       hidden: true
     });
     cantidadCompra = cantidad;
-    console.log("el valor que viene de ItemCount es: ", cantidadCompra); //para control
     
     productSelected();
   }
@@ -28,7 +27,6 @@ export default function ItemDetail({data}) {
       precio: data.price,
       cantidad: cantidadCompra
     };
-    console.log(newItem);
     addToCart(newItem);
   }
 

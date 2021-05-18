@@ -4,7 +4,6 @@ import { CartContext } from '../../context/cartContext';
 
 export default function Cart({ itemSale }) {
     const { updateToCart, handleRemove } = useContext(CartContext);
-    console.log(itemSale.cantidad); //para test
 
     function capitalizarPrimeraLetra(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
@@ -18,7 +17,6 @@ export default function Cart({ itemSale }) {
             precio: itemSale.precio,
             cantidad: itemSale.cantidad +1
         };
-        console.log(newItem);
         updateToCart(newItem);
     }
 
@@ -30,7 +28,6 @@ export default function Cart({ itemSale }) {
             precio: itemSale.precio,
             cantidad: itemSale.cantidad -1
         };
-        console.log(newItem);
         updateToCart(newItem);
     }
 

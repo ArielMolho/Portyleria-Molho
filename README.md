@@ -14,5 +14,5 @@ Además el nav bar tiene widget para acceso al shopping cart que por el momento 
 ### Productos
 
 Al ingresar a Productos tendremos el listado completo de productos ofrecidos en formato de cards.
-Al clickear en cada producto iremos a su página respectiva (path="/item/:itemId") con información del producto y el contador para luego agregarlos al cart (todavía no es funcional, sólo dá un console.log)
+Al clickear en cada producto iremos a su página respectiva (path="/item/:itemId") con información del producto y el contador para luego agregarlos al cart.
 También tenemos la funcionalidad de filtrar por categoría (path="/products/:categoryId") a partir de una barra botonera dentro de Productos

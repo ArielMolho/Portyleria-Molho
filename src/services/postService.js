@@ -33,11 +33,9 @@ export function createOrder(buyer, items, total) {
       total: total,
     })
     .then(function (oderId) {
-      console.log("Confirmación de compra Nº: ", oderId.id);
       return oderId.id;
     })
     .catch(function (error) {
-      console.error(error);
-      return "Error procesando pedido";
+      return error;
     });
   }  

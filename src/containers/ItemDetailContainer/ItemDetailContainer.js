@@ -21,7 +21,6 @@ export default function ItemDetailContainer() {
         return () => clearTimeout(timer);
     },[itemId])
 
-    console.log(data)
     return(
         <div className="item-body">
             <h2 className="header-detalle">Detalle de Producto</h2>

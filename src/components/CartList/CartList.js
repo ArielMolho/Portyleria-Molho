@@ -4,12 +4,10 @@ import { CartContext } from '../../context/cartContext';
 
 export default function CartList() {
     const { cart, clearCart, totalPrice } = useContext(CartContext);
-    console.log(cart) //para test
 
     const cartOrder = ["alfajor", "cookie", "muffin", "pasta-frola", "porty-box", "scon"]
     const sortedCart = Object.keys(cart).map(key => cart[key]);
     sortedCart.sort((a, b) => cartOrder.indexOf(a.categoria) - cartOrder.indexOf(b.categoria));
-    console.log(sortedCart); //para test
 
     return (
         <div>
