@@ -4,8 +4,8 @@ El nombre del proyecto es Portyleria, que es el emprendimiento personal de paste
 
 ## Tech
 Para el proyecto se ha usado:
-- [ReactJS](https://reactjs.org/) - ReacjJS
-- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Bootstrap
+- [ReactJS](https://reactjs.org/)
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
 ## Funcionalidad
 
@@ -15,7 +15,7 @@ El proyecto cuenta con tres tabs en el nav bar:
 3. Contacto: por ahora simplement icónos para acceder a las formas de contacto (path="/contact").
 4. Cart: El nav bar tiene un widget para acceso al shopping cart (path="/cart").
 
-[GIF](https://drive.google.com/file/d/1iSGLKXTlntWdiQdjCW2MG_8v9iYPFg8N/view?usp=sharing) En este GIF se puede ver la funcionalidad general del proyecto.
+En este [GIF](https://drive.google.com/file/d/1iSGLKXTlntWdiQdjCW2MG_8v9iYPFg8N/view?usp=sharing) se puede ver la funcionalidad general del proyecto.
 
 ## Productos
 
