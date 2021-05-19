@@ -13,18 +13,6 @@ export default function OrderPageContainer() {
     const [phone, setPhone] = useState(0);
     const [orderId, setOrderId] = useState('');
 
-    function handleNameChange(event){
-        setName(event.target.value)
-    }
-
-    function handleEmailChange(event){
-        setEmail(event.target.value)
-    }
-
-    function handlePhoneChange(event){
-        setPhone(event.target.value)
-    }
-
     function placeOrder(event) {
         event.preventDefault()
         const buyer = {
@@ -47,12 +35,12 @@ export default function OrderPageContainer() {
             <form className="order-form">
                 <p className="form-title">Datos personales:</p>
                 <fieldset>
-                    <input onChange={handleNameChange} className="form-control mb-3" type="text" placeholder="Ingrese su nombre" required></input>
-                    <input onChange={handleEmailChange} className="form-control mb-3" type="text" placeholder="Ingrese su email" required></input>
-                    <input onChange={handlePhoneChange} className="form-control mb-3" type="number" placeholder="Ingrese su teléfono de contacto" required></input>
+                    <input onChange={evt => setName(evt.target.value)} className="form-control mb-3" type="text" placeholder="Ingrese su nombre" required></input>
+                    <input onChange={evt => setEmail(evt.target.value)} className="form-control mb-3" type="text" placeholder="Ingrese su email" required></input>
+                    <input onChange={evt => setPhone(evt.target.value)} className="form-control mb-3" type="number" placeholder="Ingrese su teléfono de contacto" required></input>
                 </fieldset>
                 <div className="d-flex justify-content-center">
-                    <button onClick={placeOrder} type="submit" className="btn btn-primary mt-3 mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Confirmar Pedido</button>
+                    <button disabled={!(name && email && phone)} onClick={placeOrder} type="submit" className="btn btn-primary mt-3 mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Confirmar Pedido</button>
                 </div>
             </form>
             <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

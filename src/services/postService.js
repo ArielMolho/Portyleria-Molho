@@ -20,10 +20,6 @@ export function getPostById(idPost) {
     })
 }
 
-export function getCollection(){
-  return orderCollection;
-}
-
 export function createOrder(buyer, items, total) {
   return orderCollection
     .add({
