@@ -2,6 +2,11 @@
     margin: 1rem 0;
 }
 
+.card-noProduct{
+    text-align: center;
+    padding: 2rem;
+}
+
 #button-finalizar{
     margin: 1rem;
 }

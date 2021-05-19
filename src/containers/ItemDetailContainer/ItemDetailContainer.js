@@ -17,7 +17,7 @@ export default function ItemDetailContainer() {
             .then(res => setData(res));
         const timer = setTimeout(() => {
             setIsLoading(true);
-        }, 500);
+        }, 1000);
         return () => clearTimeout(timer);
     },[itemId])
 
@@ -25,7 +25,7 @@ export default function ItemDetailContainer() {
         <div className="item-body">
             <h2 className="header-detalle">Detalle de Producto</h2>
             <div className="d-flex flex-md-row justify-content-around flex-wrap item-wrapper">
-                {isLoading ? <ItemDetail data={data[0]}/> : <Loading />}
+                {!isLoading ? <Loading /> : <ItemDetail data={data}/>}
             </div>
             <button type="button" className="return-button btn btn-warning">
                 <Link to={`/products`} className="link-text">Volver a Productos</Link>
